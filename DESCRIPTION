@@ -1,0 +1,13 @@
+Package: gameday
+Title: Let R tell you if your NHL team has a game today
+Version: 0.0.0.9000
+Authors@R: "Rebecca Johnston <rebecca.lea.johnston@gmail.com> [aut, cre]"
+Description: Query live.nhle.com to check if your NHL team is listed on the
+    teams that play today
+Depends: 
+    R (>= 3.1.1),
+    RCurl (>= 1.95.4.3)
+License: CC0
+LazyData: true
+Suggests: knitr
+VignetteBuilder: knitr
