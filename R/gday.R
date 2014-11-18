@@ -10,18 +10,34 @@
 #' Suffer no more! You can now ask R directly, without tempting yourself
 #' by firing up your web browser.
 #'
-#' @param team.name The name of your team
-#' @return logical \code{TRUE} if \code{team.name} has a NHL game today,
+#' @param team The name of your team, as a string (the default team is "Canucks")
+#' @param date The date of the game, as "YYYY-MM-DD" (the default is today's date)
+#' @return logical \code{TRUE} if \code{team} has a NHL game today,
 #' \code{FALSE} otherwise
-#' @note case in \code{team.name} is ignored
+#' @note case in \code{team} is ignored
 #' @export
 #' @examples
 #' gday("canucks")
 #' gday("Bruins")
 
-gday <- function(team.name){
-	url <- paste0("http://live.nhle.com/GameData/GCScoreboard/",
-								Sys.Date(),
-								".jsonp")
-	grepl(team.name, getURL(url), ignore.case = TRUE)
+gday <- function(team = "Canucks", date = Sys.Date()){
+	# Check for an internet connection
+	internet_connection <- function() {
+		tryCatch({RCurl::getURL("www.google.com"); TRUE},
+						 error = function(err) FALSE)
+	}
+	if(!internet_connection()){
+		stop('You do not have an internet connection! The gday function requires an internet connection!')
+	}
+
+	# Check format of date argument
+	if(is.na(strptime(date, format = "%Y-%m-%d"))){
+		stop('date argument is not in the correct format! Date must be represented as "YYYY-MM-DD" e.g. "2014-12-25"')
+	}
+	# Help obtained from "http://stackoverflow.com/questions/14755425/what-are-the-standard-unambiguous-date-formats"
+
+	url <- paste0("http://live.nhle.com/GameData/GCScoreboard/", date, ".jsonp")
+
+	grepl(team, RCurl::getURL(url), ignore.case = TRUE)
 }
+
