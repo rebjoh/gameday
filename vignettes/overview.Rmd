@@ -1,17 +1,20 @@
 ---
-title: "Overview of Gameday"
+title: "Overview of gameday"
 author: "Rebecca Johnston"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Overview of Gameday}
+  %\VignetteIndexEntry{Overview of gameday}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
 
-Get NHL hockey statistics.
+## Introduction to gameday
+
+Get key NHL hockey info.
 
 When living in Canada, you must:
+
 * Live hockey;
 * Breathe hockey;
 * Think about hockey all the time;
@@ -23,3 +26,48 @@ Or:
 This package helps you to:
  
 * Prevent your banishment by providing basic hockey stats so you can masquerade as a hockey lover. Go Canucks! Or whatever that Vancouver hockey team is called...
+
+In particular, this package has two functions:
+
+1. `gday()`
+2. `scores`
+
+```{r, include=FALSE}
+library("gday")
+```
+
+## Check gameday of a team with `gday()`
+The function `gday()` returns TRUE if the specified NHL team plays on a specified date and FALSE otherwise. The first argument is the name of an NHL team (as a chracter string, i.e. in quotes), and the second argument is the date of the game, as "YYYY-MM-DD".
+
+For example, to check if the Toronto Maple Leafs played on November 9th, 2014 using `gday()`:
+
+```{r}
+gday(team = "Maple Leafs", date = "2014-11-09")
+
+# or simply
+
+gday("Maple Leafs", "2014-11-09")
+```
+
+Notes: 
+
+* If no arguments are specified in `gday()`, the default `team` is "Canucks" and the default `date` is today's date.
+* The case in argument `team` is ignored, i.e. "canucks" is equivalent to "Canucks" and "CANUCKS".
+
+## Check NHL game scores with `scores()`
+The function `scores()` returns all the NHL game scores from a specified date. `scores()` only takes one argument, a date represented as "YYYY-MM-DD". 
+
+When there is at least one game on the specified date, the output of `scores()` is a dataframe with four variables: 
+
+1. `home`: team common name
+2. `away`: away team common name
+3. `home_score`: home team score
+4. `away_score`: away team score
+
+For example, to see the result of all games on Nov 9th 2014:
+
+```{r}
+scores(date = "2014-11-09")
+```
+
+Sve

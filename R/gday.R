@@ -1,4 +1,4 @@
-#' Is it Gameday?
+#' Is it gameday?
 #'
 #' This function returns TRUE if your NHL team plays on a specified date
 #' and FALSE otherwise
