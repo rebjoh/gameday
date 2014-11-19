@@ -1,8 +1,25 @@
 #' My first R package: gameday
 #'
-#' A one-line summary of what this package is for
+#' Get NHL hockey statistics.
 #'
-#' Then we can add a larger paragraph that can span several lines
+#' When living in Canada, you must:
+#' \itemize{
+#' \item Live hockey;
+#' \item Breathe hockey;
+#' \item Think about hockey all the time;
+#' }
+#'
+#' Or:
+#' \itemize{
+#' \item Be banished from civilization and inevitably perish in the tundra.
+#' }
+#'
+#' This package helps you to:
+#' \itemize{
+#' \item Prevent your banishment by providing basic hockey stats so you can
+#' masquerade as a hockey lover. Go Canucks! Or whatever that Vancouver hockey
+#' team is called...
+#' }
 #'
 #' @docType package
 #' @name gameday

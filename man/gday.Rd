@@ -11,15 +11,15 @@ gday(team = "Canucks", date = Sys.Date())
 \item{date}{The date of the game, as "YYYY-MM-DD" (the default is today's date)}
 }
 \value{
-logical \code{TRUE} if \code{team} has a NHL game today,
+logical \code{TRUE} if \code{team} has a NHL game on specified date,
 \code{FALSE} otherwise
 }
 \description{
-This function returns TRUE if your NHL team plays today
+This function returns TRUE if your NHL team plays on a specified date
 and FALSE otherwise
 }
 \details{
-You know the problem: You're in your office writing R code and
+You know the problem: you're in your office writing R code and
 suddenly have the urge to check whether your NHL team has a game today.
 Before you know it you just wasted 15 minutes browsing the lastest
 news on your favorite hockey webpage.
@@ -30,7 +30,8 @@ by firing up your web browser.
 case in \code{team} is ignored
 }
 \examples{
-gday("canucks")
+gday("Canucks")
 gday("Bruins")
+gday("Maple Leafs", "2014-11-18")
 }
 
