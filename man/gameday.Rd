@@ -5,7 +5,7 @@
 \alias{gameday-package}
 \title{My first R package: gameday}
 \description{
-Get NHL hockey statistics.
+Get basic information about National Hockey League games from live.nhle.com.
 }
 \details{
 When living in Canada, you must:
@@ -20,11 +20,10 @@ Or:
 \item Be banished from civilization and inevitably perish in the tundra.
 }
 
-This package helps you to:
+The \code{gameday} helps you to:
 \itemize{
-\item Prevent your banishment by providing basic hockey stats so you can
-masquerade as a hockey lover. Go Canucks! Or whatever that Vancouver hockey
-team is called...
+\item Prevent your banishment by providing basic National Hockey League (NHL)
+information so you can masquerade as a hockey lover.
 }
 }
 

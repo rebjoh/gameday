@@ -42,5 +42,6 @@ scores <- function(date = Sys.Date() - 1){
 			 data.frame(home = paste(htn, htcommon),
 			 					 away = paste(atn, atcommon),
 			 					 home_score = hts,
-			 					 away_score = ats))
+			 					 away_score = ats,
+			 					 game_status = gs))
 }
