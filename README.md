@@ -16,3 +16,5 @@ To find the vignette associated with `gameday` using R:
 ```r
 browseVignettes(package = "gameday")
 ```
+
+Alternatively, view the vignette for `gameday` [here](https://github.com/rebjoh/gameday/blob/master/vignettes/overview.md).
