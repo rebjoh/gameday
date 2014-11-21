@@ -38,6 +38,11 @@ scores <- function(date = Sys.Date() - 1){
 	raw <- RCurl::getURL(url)
 	json <- gsub('([a-zA-Z_0-9\\.]*\\()|(\\);?$)', "", raw, perl = TRUE)
 	data <- jsonlite::fromJSON(json)$games
+
+	if((is.list(data) & length(data) == 0) == TRUE){
+		stop("There were no NHL games on the date you selected!")
+	}
+
 	with(data,
 			 data.frame(home = paste(htn, htcommon),
 			 					 away = paste(atn, atcommon),
