@@ -1,4 +1,4 @@
-#' My first R package: gameday
+#' gameday
 #'
 #' Get basic information about National Hockey League games from live.nhle.com.
 #'

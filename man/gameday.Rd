@@ -3,7 +3,7 @@
 \name{gameday}
 \alias{gameday}
 \alias{gameday-package}
-\title{My first R package: gameday}
+\title{gameday}
 \description{
 Get basic information about National Hockey League games from live.nhle.com.
 }
