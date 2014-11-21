@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="Rebecca Johnston" />
+
+<meta name="date" content="2014-11-21" />
+
+<title>Overview of gameday</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link href="data:text/css,body%20%7B%0A%20%20background%2Dcolor%3A%20%23fff%3B%0A%20%20margin%3A%201em%20auto%3B%0A%20%20max%2Dwidth%3A%20700px%3B%0A%20%20overflow%3A%20visible%3B%0A%20%20padding%2Dleft%3A%202em%3B%0A%20%20padding%2Dright%3A%202em%3B%0A%20%20font%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0A%20%20font%2Dsize%3A%2014px%3B%0A%20%20line%2Dheight%3A%201%2E35%3B%0A%7D%0A%0A%23header%20%7B%0A%20%20text%2Dalign%3A%20center%3B%0A%7D%0A%0A%23TOC%20%7B%0A%20%20clear%3A%20both%3B%0A%20%20margin%3A%200%200%2010px%2010px%3B%0A%20%20padding%3A%204px%3B%0A%20%20width%3A%20400px%3B%0A%20%20border%3A%201px%20solid%20%23CCCCCC%3B%0A%20%20border%2Dradius%3A%205px%3B%0A%0A%20%20background%2Dcolor%3A%20%23f6f6f6%3B%0A%20%20font%2Dsize%3A%2013px%3B%0A%20%20line%2Dheight%3A%201%2E3%3B%0A%7D%0A%20%20%23TOC%20%2Etoctitle%20%7B%0A%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20font%2Dsize%3A%2015px%3B%0A%20%20%20%20margin%2Dleft%3A%205px%3B%0A%20%20%7D%0A%0A%20%20%23TOC%20ul%20%7B%0A%20%20%20%20padding%2Dleft%3A%2040px%3B%0A%20%20%20%20margin%2Dleft%3A%20%2D1%2E5em%3B%0A%20%20%20%20margin%2Dtop%3A%205px%3B%0A%20%20%20%20margin%2Dbottom%3A%205px%3B%0A%20%20%7D%0A%20%20%23TOC%20ul%20ul%20%7B%0A%20%20%20%20margin%2Dleft%3A%20%2D2em%3B%0A%20%20%7D%0A%20%20%23TOC%20li%20%7B%0A%20%20%20%20line%2Dheight%3A%2016px%3B%0A%20%20%7D%0A%0Atable%20%7B%0A%20%20margin%3A%201em%20auto%3B%0A%20%20border%2Dwidth%3A%201px%3B%0A%20%20border%2Dcolor%3A%20%23DDDDDD%3B%0A%20%20border%2Dstyle%3A%20outset%3B%0A%20%20border%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0A%20%20border%2Dwidth%3A%202px%3B%0A%20%20padding%3A%205px%3B%0A%20%20border%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0A%20%20border%2Dwidth%3A%201px%3B%0A%20%20border%2Dstyle%3A%20inset%3B%0A%20%20line%2Dheight%3A%2018px%3B%0A%20%20padding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0A%20%20border%2Dleft%2Dstyle%3A%20none%3B%0A%20%20border%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0A%0Ap%20%7B%0A%20%20margin%3A%200%2E5em%200%3B%0A%7D%0A%0Ablockquote%20%7B%0A%20%20background%2Dcolor%3A%20%23f6f6f6%3B%0A%20%20padding%3A%200%2E25em%200%2E75em%3B%0A%7D%0A%0Ahr%20%7B%0A%20%20border%2Dstyle%3A%20solid%3B%0A%20%20border%3A%20none%3B%0A%20%20border%2Dtop%3A%201px%20solid%20%23777%3B%0A%20%20margin%3A%2028px%200%3B%0A%7D%0A%0Adl%20%7B%0A%20%20margin%2Dleft%3A%200%3B%0A%7D%0A%20%20dl%20dd%20%7B%0A%20%20%20%20margin%2Dbottom%3A%2013px%3B%0A%20%20%20%20margin%2Dleft%3A%2013px%3B%0A%20%20%7D%0A%20%20dl%20dt%20%7B%0A%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%7D%0A%0Aul%20%7B%0A%20%20margin%2Dtop%3A%200%3B%0A%7D%0A%20%20ul%20li%20%7B%0A%20%20%20%20list%2Dstyle%3A%20circle%20outside%3B%0A%20%20%7D%0A%20%20ul%20ul%20%7B%0A%20%20%20%20margin%2Dbottom%3A%200%3B%0A%20%20%7D%0A%0Apre%2C%20code%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20color%3A%20%23333%3B%0A%7D%0Apre%20%7B%0A%20%20white%2Dspace%3A%20pre%2Dwrap%3B%20%20%20%20%2F%2A%20Wrap%20long%20lines%20%2A%2F%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20margin%3A%205px%200px%2010px%200px%3B%0A%20%20padding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0A%0Acode%20%7B%0A%20%20font%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0A%20%20font%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0A%20%20padding%3A%202px%200px%3B%0A%7D%0A%0Adiv%2Efigure%20%7B%0A%20%20text%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0A%20%20background%2Dcolor%3A%20%23FFFFFF%3B%0A%20%20padding%3A%202px%3B%0A%20%20border%3A%201px%20solid%20%23DDDDDD%3B%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20border%3A%201px%20solid%20%23CCCCCC%3B%0A%20%20margin%3A%200%205px%3B%0A%7D%0A%0Ah1%20%7B%0A%20%20margin%2Dtop%3A%200%3B%0A%20%20font%2Dsize%3A%2035px%3B%0A%20%20line%2Dheight%3A%2040px%3B%0A%7D%0A%0Ah2%20%7B%0A%20%20border%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0A%20%20padding%2Dtop%3A%2010px%3B%0A%20%20padding%2Dbottom%3A%202px%3B%0A%20%20font%2Dsize%3A%20145%25%3B%0A%7D%0A%0Ah3%20%7B%0A%20%20border%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0A%20%20padding%2Dtop%3A%2010px%3B%0A%20%20font%2Dsize%3A%20120%25%3B%0A%7D%0A%0Ah4%20%7B%0A%20%20border%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0A%20%20margin%2Dleft%3A%208px%3B%0A%20%20font%2Dsize%3A%20105%25%3B%0A%7D%0A%0Ah5%2C%20h6%20%7B%0A%20%20border%2Dbottom%3A%201px%20solid%20%23ccc%3B%0A%20%20font%2Dsize%3A%20105%25%3B%0A%7D%0A%0Aa%20%7B%0A%20%20color%3A%20%230033dd%3B%0A%20%20text%2Ddecoration%3A%20none%3B%0A%7D%0A%20%20a%3Ahover%20%7B%0A%20%20%20%20color%3A%20%236666ff%3B%20%7D%0A%20%20a%3Avisited%20%7B%0A%20%20%20%20color%3A%20%23800080%3B%20%7D%0A%20%20a%3Avisited%3Ahover%20%7B%0A%20%20%20%20color%3A%20%23BB00BB%3B%20%7D%0A%20%20a%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0A%20%20%20%20text%2Ddecoration%3A%20underline%3B%20%7D%0A%20%20a%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0A%20%20%20%20text%2Ddecoration%3A%20underline%3B%20%7D%0A%0A%2F%2A%20Class%20described%20in%20https%3A%2F%2Fbenjeffrey%2Ecom%2Fposts%2Fpandoc%2Dsyntax%2Dhighlighting%2Dcss%0A%20%20%20Colours%20from%20https%3A%2F%2Fgist%2Egithub%2Ecom%2Frobsimmons%2F1172277%20%2A%2F%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20Keyword%20%2A%2F%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%2F%2A%20DataType%20%2A%2F%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%2F%2A%20DecVal%20%28decimal%20values%29%20%2A%2F%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20BaseN%20%2A%2F%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20Float%20%2A%2F%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20Char%20%2A%2F%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20String%20%2A%2F%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%2F%2A%20Comment%20%2A%2F%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%2F%2A%20OtherToken%20%2A%2F%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20AlertToken%20%2A%2F%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20Function%20calls%20%2A%2F%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%2F%2A%20ErrorTok%20%2A%2F%0A%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div id="header">
+<h1 class="title">Overview of gameday</h1>
+<h4 class="author"><em>Rebecca Johnston</em></h4>
+<h4 class="date"><em>2014-11-21</em></h4>
+</div>
+
+
+<div id="introduction-to-gameday" class="section level2">
+<h2>Introduction to gameday</h2>
+<p>When living in Canada, you must:</p>
+<ul>
+<li>Live hockey;</li>
+<li>Breathe hockey;</li>
+<li>Think about hockey all the time;</li>
+</ul>
+<p>Or:</p>
+<ul>
+<li>Be banished from civilization and inevitably perish in the tundra.</li>
+</ul>
+<p>The <code>gameday</code> package helps you to:</p>
+<ul>
+<li>Prevent your banishment by providing basic National Hockey League information from live.nhle.com so you can masquerade as a hockey lover.</li>
+</ul>
+<p>The <code>gameday</code> package has two functions:</p>
+<ol style="list-style-type: decimal">
+<li><code>gday()</code></li>
+<li><code>scores()</code></li>
+</ol>
+</div>
+<div id="check-gameday-of-a-team-with-gday" class="section level2">
+<h2>Check gameday of a team with <code>gday()</code></h2>
+<p>The function <code>gday()</code> returns TRUE if a specified NHL team plays on a specified date and FALSE otherwise. The first argument is the name of an NHL team (as a chracter string, i.e. team name in quotes), and the second argument is the date of the game, as “YYYY-MM-DD”.</p>
+<p>For example, to check if the Toronto Maple Leafs played on 9th November 2014 using <code>gday()</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gday</span>(<span class="dt">team =</span> <span class="st">&quot;Maple Leafs&quot;</span>, <span class="dt">date =</span> <span class="st">&quot;2014-11-09&quot;</span>)</code></pre>
+<p>Or simply:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gday</span>(<span class="st">&quot;Maple Leafs&quot;</span>, <span class="st">&quot;2014-11-09&quot;</span>)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>If no arguments are specified in <code>gday()</code>, the default <code>team</code> is “Canucks” and the default <code>date</code> is today’s date. Also note, the case in argument <code>team</code> is ignored. Thus the following queries are equivalent:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gday</span>()
+<span class="kw">gday</span>(<span class="st">&quot;canucks&quot;</span>)
+<span class="kw">gday</span>(<span class="st">&quot;Canucks&quot;</span>)
+<span class="kw">gday</span>(<span class="st">&quot;CANUCKS&quot;</span>)</code></pre>
+</div>
+<div id="check-nhl-game-scores-with-scores" class="section level2">
+<h2>Check NHL game scores with <code>scores()</code></h2>
+<p>The function <code>scores()</code> returns all the NHL game scores from a specified date. <code>scores()</code> takes one argument, a date represented as “YYYY-MM-DD”. When there is at least one game on the date specified, the output of <code>scores()</code> is a dataframe with four variable columns:</p>
+<ol style="list-style-type: decimal">
+<li><code>home</code>: team common name</li>
+<li><code>away</code>: away team common name</li>
+<li><code>home_score</code>: home team score</li>
+<li><code>away_score</code>: away team score</li>
+<li><code>game_status</code>: game status? 1 = scheduled, 3 = in progress, 5 = finished</li>
+</ol>
+<p>For example, to see the result of all NHL hockey games on 9th November 2014:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scores</span>(<span class="dt">date =</span> <span class="st">&quot;2014-11-09&quot;</span>)</code></pre>
+<p>Or simply:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scores</span>(<span class="st">&quot;2014-11-09&quot;</span>)</code></pre>
+<pre><code>##                 home                away home_score away_score game_status
+## 1    OTTAWA SENATORS TORONTO MAPLE LEAFS          3          5           5
+## 2  DETROIT RED WINGS TAMPA BAY LIGHTNING          3          4           5
+## 3 NY RANGERS RANGERS     EDMONTON OILERS          1          3           5
+## 4 CHICAGO BLACKHAWKS     SAN JOSE SHARKS          5          2           5
+## 5      ANAHEIM DUCKS   VANCOUVER CANUCKS          1          2           5</code></pre>
+<p>It is also possible to save the dataframe output to a variable, and perform some data manipulations using <code>tidyr</code>, <code>plyr</code> and <code>dplyr</code> to put the data into tall format:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;tidyr&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;plyr&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">scores_2014_11_09 &lt;-<span class="st"> </span><span class="kw">scores</span>(<span class="st">&quot;2014-11-09&quot;</span>)
+
+<span class="co"># Add a new column for game number</span>
+scores_2014_11_09 &lt;-<span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(scores_2014_11_09, <span class="dt">game_number =</span> <span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;Game&quot;</span>, LETTERS[<span class="dv">1</span>:<span class="kw">nrow</span>(scores_2014_11_09)]))))
+
+<span class="co"># Save home team, home score and game number</span>
+scores_2014_11_09_home &lt;-<span class="st"> </span>scores_2014_11_09 %&gt;%
+<span class="st">    </span><span class="kw">select</span>(home, home_score, game_number) %&gt;%
+<span class="st">    </span>plyr::<span class="kw">rename</span>(<span class="kw">c</span>(<span class="st">&quot;home&quot;</span> =<span class="st"> &quot;team_name&quot;</span>, <span class="st">&quot;home_score&quot;</span> =<span class="st"> &quot;score&quot;</span>))
+
+<span class="co"># Save away team, away score and game number</span>
+scores_2014_11_09_away &lt;-<span class="st"> </span>scores_2014_11_09 %&gt;%
+<span class="st">    </span><span class="kw">select</span>(away, away_score, game_number) %&gt;%
+<span class="st">    </span>plyr::<span class="kw">rename</span>(<span class="kw">c</span>(<span class="st">&quot;away&quot;</span> =<span class="st"> &quot;team_name&quot;</span>, <span class="st">&quot;away_score&quot;</span> =<span class="st"> &quot;score&quot;</span>))
+
+<span class="co"># Row bind scores_2014_11_09_home and scores_2014_11_09_away</span>
+scores_2014_11_09_tall &lt;-<span class="st"> </span><span class="kw">rbind</span>(scores_2014_11_09_home, scores_2014_11_09_away)
+<span class="kw">str</span>(scores_2014_11_09_tall)</code></pre>
+<pre><code>## 'data.frame':    10 obs. of  3 variables:
+##  $ team_name  : Factor w/ 10 levels &quot;ANAHEIM DUCKS&quot;,..: 5 3 4 2 1 9 8 6 7 10
+##  $ score      : int  3 3 1 5 1 5 4 3 2 2
+##  $ game_number: Factor w/ 5 levels &quot;Game A&quot;,&quot;Game B&quot;,..: 1 2 3 4 5 1 2 3 4 5</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="kw">arrange</span>(scores_2014_11_09_tall, game_number))</code></pre>
+<pre><code>##              team_name score game_number
+## 1      OTTAWA SENATORS     3      Game A
+## 2  TORONTO MAPLE LEAFS     5      Game A
+## 3    DETROIT RED WINGS     3      Game B
+## 4  TAMPA BAY LIGHTNING     4      Game B
+## 5   NY RANGERS RANGERS     1      Game C
+## 6      EDMONTON OILERS     3      Game C
+## 7   CHICAGO BLACKHAWKS     5      Game D
+## 8      SAN JOSE SHARKS     2      Game D
+## 9        ANAHEIM DUCKS     1      Game E
+## 10   VANCOUVER CANUCKS     2      Game E</code></pre>
+<p>Now the data is in tall format, we can plot the results from each game using <code>ggplot2</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">colour_pal &lt;-<span class="st"> </span><span class="kw">brewer.pal</span>(<span class="dt">n =</span> <span class="dv">5</span>, <span class="dt">name =</span> <span class="st">&quot;Dark2&quot;</span>)
+scores_2014_11_09_tall %&gt;%
+<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">reorder</span>(team_name, <span class="kw">desc</span>(score)), <span class="dt">y =</span> score, 
+                         <span class="dt">fill =</span> game_number)) +<span class="st">         </span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) +
+<span class="st">    </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>game_number, <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>, <span class="dt">ncol =</span> <span class="dv">5</span>) +
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="dv">1</span>, <span class="dt">vjust =</span> <span class="fl">0.3</span>)) +
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;NHL scores from 9th November 2014&quot;</span>) +
+<span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Final score&quot;</span>) +
+<span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Team&quot;</span>) +
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) +
+<span class="st">    </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> score), <span class="dt">vjust =</span> <span class="fl">1.5</span>, <span class="dt">colour =</span> <span class="st">&quot;white&quot;</span>) +
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> colour_pal)</code></pre>
+<p><img src="data:image/png;base64,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QC9cSmP96mdEgN74YHrB//yiDaCzVcQGQFsI6NMv+Gi/+3kBoK/7lI/j278HQAFo8UEJ0E9+waP5TPJlPqA//QcezdcnXwegALT4oATohUtfzjj91mfZgN744NczTv/3twBo7cMCoGxAc33yC7W10LJz8XNtRTMDtLYWKr9lAApARUV8LhTxAHRegF64VFvCkwC98cHaEh6APglApYBeuFTfiKcAeuOD9Y14APokABUC+vQLE/gkAPq6T03gE4A+CUBlgD6b1JfvFEDfnNSX7wDUC4AKAH120jASAdA3TxpGAqBeAJQP6LP17XcSoG+ub78D0OIDAGUD6kfinUQd9Xkc6KgHoNqAPlM8RAGgry/iAKAAFNPtACgABaAAlP20ig8AFIAC0LJz8TMABaDTnlbxAYCGazMXkTVBoM3NijGVNX6gcWcqoJvTlEz97ZgzETVWoKfKzsXPVEDltywGtMCdyJogEHJQ5KAAFIACUG4gAApAASgABaDcQAAUgAJQAApAuYEAKAAFoAAUgHIDAVAACkABKADlBgKgABSAAlAAyg0EQAEoAAWgAJQbCIACUAAKQAEoNxAABaAAFIACUG4gAApAASgABaDcQAAUgAJQAApAuYEAKACdqu23PQxAnQBolIDunjoGQL0AaIyAbnR/EzloJgAaI6D/eBFFfC4AGiOgozpo16v4VyJrgkBjorLGDzQuKqD8QOMiosYK9FSdMRVQVqhp8KGRNCXQuDOVNX6gluegrEBoxQNQAApAASgABaAAFIAC0PYAWhUABaAAFIACUAAKQAEoAJ0U6JaHPrRsgN744F8C0LYAestDybIBeuODCQBtC6A/9w/JsgH6uk8lALQlgKbZ5/f+dLkATbPPb/8+AG0NoJ+++eeXDdC/f+3rAWhLAHVaMkCdACgABaAAFIACUAAKQAEoAAWgABSAAlAACkABKAAFoAAUgALQeACdHmghAZ0RCIACUAAKQAEoAAWgABSAAtC2ArqZi8iaINDmZsWYyho/0LgzlTV+oHFnImqsQE+VnYufqYCyQlVuWQwoctBgIQelBEIRD0ABKAAFoAAUgAJQAApAASgABaAAFIACUAAKQAEoAAWgABSAAlAACkABKAAFoAAUgAJQAApAASgABaAAFIACUAAKQAEoAAWgABSAAlAACkABKAAFoAAUgAJQAApAASgAZQJ6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" /></p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
